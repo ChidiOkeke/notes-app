@@ -1,0 +1,65 @@
+<%- include('partials/head') %>
+    <%- include('partials/header') %>
+
+        <body>
+
+            <div class="container">
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <td>ID</td>
+                            <td>
+                                <%= note.id %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>
+                                <h2>
+                                    <%= note.title %>
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>
+                                <h2>
+                                    <%= note.description %>
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DueDate</td>
+                            <td>
+                                <%= note.DueDate %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>
+                                <%= note.status %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Created At</td>
+                            <td>
+                                <%= note.createdAt %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Updated At</td>
+                            <td>
+                                <%= note.updatedAt %>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <a href="/">
+                    <button class="btn btn-primary mt-2 " id="addBtn" style="background-color:green">
+                        Back
+                    </button>
+                </a>
+            </div>
+        </body>
+        <%- include('partials/footer') %>

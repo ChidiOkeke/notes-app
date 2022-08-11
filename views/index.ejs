@@ -1,0 +1,86 @@
+<%- include('partials/head') %>
+  <%- include('partials/header') %>
+    <div class="container my-3">
+      <h1>Create notes here</h1>
+
+      <form action="/notes/create" method="POST">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              Add a Note
+            </h5>
+
+            <div class="create-note form-group">
+              <input type="text" class="form-control" id="title" placeholder="Title" name="title" />
+
+              <textarea name="description" class="form-control" id="addTxt" rows="3"
+                placeholder="Description"></textarea>
+
+              <input type="text" class="form-control" id="DueDate" placeholder="DueDate" name="DueDate" />
+
+              <input type="text" class="form-control" id="status" placeholder="Status" name="status" />
+
+            </div>
+            <button class="btn btn-primary mt-2" id="addBtn" style="background-color:green">
+              Add Note
+            </button>
+          </div>
+        </div>
+      </form>
+
+
+      <hr>
+      <% if(typeof message !=='undefined' ) {%>
+
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <% }%>
+
+
+          <h1>Your Notes</h1>
+          <hr>
+          <ul class="container">
+            <% if(typeof notes !=='undefined' ) {%>
+              <% notes.forEach((note)=> { %>
+                <li class="note">
+                  <div class="row">
+                    <div class="content col-md-8">
+                      <h2>
+                        <%= note.title %>
+                      </h2>
+                      <p>
+                        <!-- <a href="notes/read/<%= note.id %>""> -->
+                        <%= note.description %>
+                          <!-- </a> -->
+                      </p>
+                    </div>
+                    <div class="bottons col-md-4">
+                      <a href="/notes/read/<%= note.id %>">
+                        <button class="btn btn-warning mt-2 " id="addBtn">
+                          View
+                        </button>
+                      </a>
+                      <a href="/update/<%= note.id %>">
+                        <button class="btn btn-primary mt-2 " id="addBtn" style="background-color:green">
+                          Edit
+                        </button>
+                      </a>
+                      <a href="/notes/delete/<%= note.id %>">
+                        <button class="btn btn-danger mt-2 " id="addBtn">
+                          Delete
+                        </button>
+                      </a>
+                    </div>
+
+                  </div>
+                </li>
+                <hr />
+                <% }) %>
+                  <% }%>
+          </ul>
+
+          <%- include('partials/footer') %>

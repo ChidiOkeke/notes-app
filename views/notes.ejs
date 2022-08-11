@@ -1,0 +1,27 @@
+<%- include('partials/head') %>
+    <%- include('partials/header') %>
+        <% if(typeof message !=='undefined' ) {%>
+        
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= message %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        
+            <% }%>
+        <body>
+            <ul>
+                <% notes.forEach((note)=> { %>
+                    <li>
+                        <h2>
+                            <%= note.title %>
+                        </h2>
+                        <p>
+                            <a href="read/<%= note.id %>""><%= note.id %></a>
+                            
+                        </p>
+                    </li>
+                    <hr />
+                    <% }) %>
+            </ul>
+        </body>
+        <%- include('partials/footer') %>

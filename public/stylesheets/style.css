@@ -1,0 +1,39 @@
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.btn-warning a {
+  color: #111111
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.custom-checkbox a {
+  color: #0d6efd;
+}
+
+.card-body {
+  background-color: #ccc;
+}
+
+.create-note input,
+.create-note textarea {
+  margin-bottom: 1rem;
+}
+
+.note {
+  list-style: none;
+  background-color: #ccc;
+}
+
+.content {
+  padding: 1rem 0rem 1rem 2rem;
+
+}
+
+.note div {
+  align-items: center;
+}

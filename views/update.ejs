@@ -1,0 +1,44 @@
+<%- include('partials/head') %>
+    <%- include('partials/header') %>
+        <div class="container my-3">
+            <h1>Update a note</h1>
+
+            <% if(typeof formcontent !=='undefined' ) {%>
+
+                <form action="/notes/update/<%= noteid %>" method="POST">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Note Title: <%= formcontent.title %>
+                            </h5>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="title" placeholder="Title" name="title"
+                                    value="<%= formcontent.title %>" />
+
+                                <textarea name="description" class="form-control" id="addTxt" rows="3"
+                                    placeholder="Description"><%= formcontent.description%></textarea>
+
+                                <input type="text" class="form-control" id="DueDate" placeholder="DueDate"
+                                    name="DueDate" value="<%= formcontent.DueDate %>" />
+
+                                <input type="text" class="form-control" id="status" placeholder="Status" name="status"
+                                    value="<%= formcontent.status %>" />
+
+                            </div>
+                            <button class="btn btn-primary mt-2" id="addBtn" style="background-color:green">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <% } %>
+
+                    <a href="/">
+                        <button class="btn btn-primary mt-2 " id="addBtn">
+                            Back
+                        </button>
+                    </a>
+
+                    <%- include('partials/footer') %>
